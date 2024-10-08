@@ -1,0 +1,18 @@
+{
+  "name": "eng-software",
+  "version": "1.0.0",
+  "description": "O **Chatbot Educacional** é um projeto desenvolvido para ajudar estudantes nas áreas de Inteligência Artificial e Tecnologia a resolverem dúvidas, corrigirem erros de código e revisarem conteúdos complexos de forma interativa e acessível. O objetivo é oferecer um portal educacional onde os alunos possam interagir com um chatbot baseado na API da OpenAI, promovendo uma experiência de aprendizado contínua e assistida.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0"
+  }
+}
