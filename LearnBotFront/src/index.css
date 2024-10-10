@@ -1,0 +1,44 @@
+.app-box{
+  border: 2px solid rgb(33, 165, 40);
+  margin: 2px;
+  display: grid;
+  grid-template-columns: 100px 1fr; 
+  grid-template-rows: auto; 
+  grid-gap: 10px; 
+  gap: 5px;
+  min-height: 300px;
+}
+
+.chat-selection-button{
+  border: 2px solid black;
+  margin: 2px;
+  background-color: rgb(218, 212, 212);
+}
+.chat-selection-button:hover{
+  background-color: rgb(145, 143, 143);
+  cursor: pointer;
+}
+
+.chat-selection-container{
+  border: 2px solid black;
+  max-width: 100px;  
+  min-width: 100px; 
+  min-height: 300px;
+  position: absolute;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.welcome-screen-container{
+  border: 2px solid black;
+  height: 100%;
+  width: 100%; 
+  min-height: 250px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.user-input{
+  grid-column: 2;
+  grid-row: 2;
+}
