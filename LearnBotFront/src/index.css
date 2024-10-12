@@ -1,12 +1,12 @@
 .app-box{
   border: 2px solid rgb(33, 165, 40);
-  margin: 2px;
   display: grid;
   grid-template-columns: 100px 1fr; 
-  grid-template-rows: auto; 
+  grid-template-rows: 95% 5%; 
   grid-gap: 10px; 
   gap: 5px;
-  min-height: 300px;
+  min-height: 90vh;
+  width: 100%;
 }
 
 .chat-selection-button{
@@ -21,9 +21,8 @@
 
 .chat-selection-container{
   border: 2px solid black;
-  max-width: 100px;  
-  min-width: 100px; 
-  min-height: 300px;
+  width: 100px;
+  min-height: 90%;
   position: absolute;
   grid-column: 1;
   grid-row: 1;
