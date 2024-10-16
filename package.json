@@ -14,5 +14,9 @@
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "mongoose": "^8.7.0"
+  },
+  "devDependencies": {
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/theme": "^2.2.11"
   }
 }

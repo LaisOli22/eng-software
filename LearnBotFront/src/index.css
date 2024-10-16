@@ -1,26 +1,30 @@
-.app-box{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app-box {
   display: grid;
-  grid-template-columns: 150px 1fr; 
-  grid-template-rows: 95% 5%; 
-  grid-gap: 10px; 
+  grid-template-columns: 150px 1fr;
+  grid-template-rows: 95% 5%;
+  grid-gap: 10px;
   gap: 5px;
   min-height: 90vh;
   width: 100%;
 }
 
-.chat-selection-button{
+.chat-selection-button {
   border: 2px solid white;
   border-radius: 50px;
   margin: 2px;
   background-color: rgb(218, 212, 212);
   font-size: 20px;
 }
-.chat-selection-button:hover{
+.chat-selection-button:hover {
   background-color: rgb(145, 143, 143);
-  cursor: pointer
+  cursor: pointer;
 }
 
-.chat-selection-container{
+.chat-selection-container {
   border: 2px solid black;
   border-top-right-radius: 30px;
   width: 150px;
@@ -30,18 +34,18 @@
   grid-row: 1;
 }
 
-.welcome-screen-container{
+.welcome-screen-container {
   border: 2px solid black;
   border-radius: 20px;
   height: 100%;
-  width: 100%; 
+  width: 100%;
   min-height: 250px;
   grid-column: 2;
   grid-row: 1;
   font-size: 40px;
 }
 
-.user-input{
+.user-input {
   height: 50px;
   grid-column: 2;
   grid-row: 2;
