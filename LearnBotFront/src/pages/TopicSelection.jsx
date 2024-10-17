@@ -1,11 +1,9 @@
 import { NextUIProvider } from '@nextui-org/react';
-import WelcomeButton from '../components/WelcomeButton';
 
 function TopicSelection() {
   return (
     <NextUIProvider>
-        <div>
-            <WelcomeButton/>
+        <div className="bg-black h-screen bg-purple bg-cover bg-center">
         </div>
     </NextUIProvider>
   )

@@ -1,11 +1,17 @@
 import { Button } from "@nextui-org/react";
- 
-function WelcomeButton(){
-    return (
-        <Button 
-            className="bg-[#9167F1] hover:bg-[#7e59d2] text-white font-bold py-2 px-4 rounded"> Começar agora
-        </Button>
-    );
-}
+import { Link } from "react-router-dom";
+import { IonIcon } from "@ionic/react";
+import { arrowForward } from "ionicons/icons";
 
-export default WelcomeButton;
+function WelcomeButton() {
+    return (
+      <Link to="/selecionar" className="inline-block">
+        <Button className="bg-[#9167F1] hover:bg-[#7e59d2] text-white font-semibold py-4 px-10 text-2xl rounded-full flex items-center gap-3">
+          <span>Começar agora</span>
+          <IonIcon icon={arrowForward} className="size-8 pt-1" />
+        </Button>
+      </Link>
+    );
+  }
+  
+  export default WelcomeButton;

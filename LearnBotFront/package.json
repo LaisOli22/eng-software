@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ionic/react": "^8.3.3",
     "@nextui-org/react": "^2.4.8",
+    "ionicons": "^7.4.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-ionicons": "^4.2.1",
     "react-router-dom": "^6.27.0"
   },
   "devDependencies": {

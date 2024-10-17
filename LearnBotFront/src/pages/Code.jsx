@@ -1,11 +1,9 @@
 import { NextUIProvider } from '@nextui-org/react';
-import WelcomeButton from '../components/WelcomeButton';
 
 function Code() {
   return (
     <NextUIProvider>
-        <div>
-            <WelcomeButton/>
+        <div className="bg-white h-screen bg-green bg-cover bg-center">
         </div>
     </NextUIProvider>
   )
