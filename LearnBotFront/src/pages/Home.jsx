@@ -19,7 +19,7 @@ function Home() {
         <div className="flex-col items-center max-w-xl ml-72 ">
           <div className="text-[#FFFFFF] text-justify">
             <h1 className="text-5xl font-bold leading-tight mb-6">
-              Estude quando quiser, a qualquer momento
+              Estude quando quiser,<br/> a qualquer momento
             </h1>
             <p className="mb-10 text-2xl">
               Desenvolvido para ajudar estudantes nas áreas de Inteligência

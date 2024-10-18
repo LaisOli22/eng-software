@@ -4,7 +4,7 @@ import { sendSharp } from "ionicons/icons";
 
 function InputTab() {
   return (
-    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full flex justify-center mb-20">
+    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full flex justify-center mb-12">
           <div className="flex items-center gap-4 bg-[#E1DDE5] rounded-full h-14 w-1/2 shadow-md justify-between">
             <input
               placeholder="Digite algo"
