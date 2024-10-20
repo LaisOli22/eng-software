@@ -9,7 +9,7 @@ function ChallengeInfo() {
         />
       </div>
 
-      <p className="text-justify w-1/2">
+      <p className="text-justify w-1/2 text-lg">
         Vamos criar um desafio para você! Primeiro, me diga até onde você já
         estudou para eu preparar um desafio adequado. <br/> Escolha uma opção: <br/> Módulo
         1 - HTML5 & CSS3 - Introdução à HTML5 <br/> Módulo 2 - HTML5 & CSS3 -

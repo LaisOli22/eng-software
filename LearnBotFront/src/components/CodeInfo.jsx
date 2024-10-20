@@ -9,7 +9,7 @@ function CodeInfo() {
             />
           </div> 
 
-          <p className="text-justify w-1/2">
+          <p className="text-justify w-1/2 text-lg">
             Opa! Parece que o seu código deu erro, né? 😱 Não se preocupe! Estou
             aqui pra ajudar. Por favor, copie o código que está dando problema e
             cole aqui para que eu possa dar uma olhada e te ajudar a resolver o

@@ -9,7 +9,7 @@ function ExplainInfo() {
               />
             </div>
   
-            <p className="text-justify w-1/2">
+            <p className="text-justify w-1/2 text-lg">
             Ótimo! Qual comando ou função você quer que eu explique?
             </p>
           </div>

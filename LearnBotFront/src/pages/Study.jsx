@@ -1,6 +1,6 @@
 import { NextUIProvider } from "@nextui-org/react";
 import Header from "../components/Header";
-import InputTab from "../components/InputTab";
+import InputTab from "../components/InputTabStudy";
 import StudyInfo from "../components/StudyInfo";
 
 function Study() {

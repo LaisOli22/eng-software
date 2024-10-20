@@ -1,6 +1,6 @@
 import { NextUIProvider } from '@nextui-org/react';
 import Header from '../components/Header';
-import InputTab from '../components/InputTab';
+import InputTab from '../components/InputTabCode';
 import CodeInfo from '../components/CodeInfo';
 
 function Code() {
