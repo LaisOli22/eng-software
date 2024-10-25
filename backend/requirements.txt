@@ -1,3 +1,5 @@
 openai
 azure-core
 python-dotenv
+fastapi
+uvicorn

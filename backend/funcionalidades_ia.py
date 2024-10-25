@@ -43,7 +43,6 @@ def gpt_erro_no_codigo(question):
 
     return response.choices[0].message.content
 
-print(gpt_erro_no_codigo("printe('oi')"))
 
 # Função responsável por retornar resposta do GPT em relação a funcionalidade Explicar um Comando ou função
 def gpt_explicar_comando(question):
@@ -65,4 +64,3 @@ def gpt_explicar_comando(question):
 
   return response.choices[0].message.content
 
-print(gpt_explicar_comando("não entendi como funciona a função almbda em python"))
