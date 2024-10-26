@@ -1,42 +1,68 @@
 import { useState } from "react";
 import { Button } from "@nextui-org/react";
 import { IonIcon } from "@ionic/react";
-import { sendSharp } from "ionicons/icons";
+import { send } from "ionicons/icons";
+import axios from "axios";
+import Answer from "./Answer";
 
 function InputTab() {
-  // Estado para armazenar o valor do input
   const [inputValue, setInputValue] = useState("");
-  // Estado para armazenar as perguntas enviadas
   const [questions, setQuestions] = useState([]);
 
   // Função para lidar com o envio da pergunta
-  const handleSend = () => {
+  const handleSend = async () => {
     if (inputValue.trim()) {
-      setQuestions([...questions, inputValue]);
+      const questionText = inputValue.trim();
+      setQuestions([...questions, { text: questionText, isUser: true }]);
       setInputValue("");
+
+      try {
+        // Requisição para o backend
+        const response = await axios.post(
+          "http://127.0.0.1:8000/explicar_comando",
+          {
+            question: questionText,
+          }
+        );
+
+        // Obter resposta da API e adicionar ao estado
+        const answer = response.data.resposta;
+        setQuestions((prevQuestions) => [
+          ...prevQuestions,
+          { text: answer, isUser: false },
+        ]);
+      } catch (error) {
+        console.error("Erro ao buscar resposta da API:", error);
+      }
     }
   };
 
   return (
-    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-full flex justify-center mb-12">
-      <div className="w-full flex flex-col items-center">
+    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-screen flex justify-center mb-12">
+      <div className="w-screen flex flex-col items-center">
         {/* Renderizar as perguntas acima do input */}
-        <div className="flex justify-center mb-5 w-full h-[500px] overflow-y-auto bg-transparent rounded-lg">
-          <div className="flex flex-col items-end w-1/2">
-          {questions.map((question, index) => (
-            <div
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              key={index}
-              className="p-3 bg-purple-900 rounded-3xl my-2 max-w-full w-auto break-words"
-              style={{ wordWrap: "break-word", maxWidth: "60%" }}
-            >
-              <p className="text-lg text-white px-4">{question}</p>
-            </div>
-          ))}
+        <div className="flex justify-center mb-5 w-screen h-[470px] overflow-y-auto bg-transparent rounded-lg">
+          <div className="flex flex-col w-1/2">
+            {questions.map((message, index) => (
+              <div
+                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                key={index}
+                className={`my-2 max-w-full w-auto break-words ${
+                  message.isUser ? "self-end" : "self-start"
+                }`}
+              >
+                {message.isUser ? (
+                  <div className="p-3 self-end bg-purple-900 text-white rounded-3xl my-2">
+                    <p className="text-lg">{message.text}</p>
+                  </div>
+                ) : (
+                  <Answer message={message.text} />
+                )}
+              </div>
+            ))}
           </div>
-          
         </div>
-
+        {/* Campo de entrada */}
         <div className="flex items-center gap-4 bg-[#E1DDE5] rounded-full h-14 w-1/2 shadow-md justify-between">
           <input
             placeholder="Digite algo"
@@ -46,9 +72,10 @@ function InputTab() {
           />
           <Button
             onClick={handleSend}
-            className="bg-[#C9BCD6] rounded-full h-10 w-10 mr-3 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
+            className="bg-[#C9BCD6] rounded-full h-11 w-11 mr-3 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
           >
-            <IonIcon icon={sendSharp} className="size-6 text-[#592899]" />
+            <IonIcon icon={send}
+            className="text-[#592899]" />
           </Button>
         </div>
       </div>

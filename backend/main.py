@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 from funcionalidades_ia import gpt_erro_no_codigo, gpt_explicar_comando
+from fastapi.middleware.cors import CORSMiddleware
 
 # Definir o modelo de dados para entrada (pergunta do usuário)
 class QuestionRequest(BaseModel):
@@ -8,6 +9,14 @@ class QuestionRequest(BaseModel):
 
 # Inicializar o app FastAPI
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Endpoint para erros no código
 @app.post("/erro_no_codigo")
