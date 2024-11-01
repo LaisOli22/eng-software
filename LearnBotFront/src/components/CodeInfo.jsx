@@ -1,7 +1,7 @@
 function CodeInfo() {
   return (
     <div className="justify-center w-screen flex align-top">
-      <div className="w-1/2 flex">
+      <div className="items-start w-1/2 flex">
         <div className="bg-[#383638] w-20 h-10 rounded-full mr-6">
           <img
             src="./src/assets/IMG_5669.PNG"
