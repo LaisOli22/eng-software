@@ -2,10 +2,10 @@ import React from 'react';
 import { IonIcon } from "@ionic/react";
 import { codeOutline } from "ionicons/icons";
 
-function DebugButton({ onDebugClick }) {
+function Funcao1Button({ onFuncao1Click }) {
     return (
         <span
-            onClick={onDebugClick} // Adiciona o onClick aqui
+            onClick={onFuncao1Click} // Adiciona o onClick aqui
             className="flex items-center justify-center gap-2 w-36 h-12 rounded-[30px] border-gray-400 border-2 hover:cursor-pointer shadow-lg active:shadow-none hover:bg-[#fdf5ff] opacity-80"
             style={{ backgroundColor: "rgb(225, 221, 229)" }}
         >
@@ -13,10 +13,10 @@ function DebugButton({ onDebugClick }) {
                 <IonIcon icon={codeOutline} className="text-3xl" />
             </div>
             <div className="text-center font-normal">
-                <p>Debug</p>
+                <p>println()</p>
             </div>  
         </span>
     );
 }
 
-export default DebugButton;
+export default Funcao1Button;

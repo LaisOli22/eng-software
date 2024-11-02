@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import DebugButton from "./DebugButton";
-import MelhoriaButton from "./MelhoriaButton";
-import InputTab from "./InputTabCode";
+import InputTab from "./InputTabExplain";
+import Funcao1Button from './Funcao1Button';
+import Funcao2Button from './Funcao2Button';
 
-function CodeButtonContainer() {
+function ExplainButtonContainer() {
     const [isVisible, setIsVisible] = useState(true);
   const [inputValue, setInputValue] = useState(""); // Mova o estado para cá, se precisar controlar o valor do input
 
-  const handleDebugClick = () => {
-    setInputValue("Preciso de ajuda para debugar meu código");
+  const handleFuncao1Click = () => {
+    setInputValue("Me explique o comando println()");
   };
-  const handleMelhoriaClick = () => {
-    setInputValue("Preciso de ajuda para melhorar meu código.");
+  const handleFuncao2Click = () => {
+    setInputValue("Me explique o comando sort()");
   };
   const handleInputSubmit = () => {
     setIsVisible(false);
@@ -21,8 +21,8 @@ function CodeButtonContainer() {
     <>
       {isVisible && (
         <div className="fixed bottom-0 w-3/5 flex justify-center p-2 space-x-4 ml-8">
-          <MelhoriaButton onMelhoriaClick = {handleMelhoriaClick}/>
-          <DebugButton onDebugClick={handleDebugClick} />
+          <Funcao1Button onFuncao1Click = {handleFuncao1Click}/>
+          <Funcao2Button onFuncao2Click={handleFuncao2Click} />
         </div>
       )}
       <InputTab inputValue={inputValue} setInputValue={setInputValue} onSubmit={handleInputSubmit}/>
@@ -30,4 +30,4 @@ function CodeButtonContainer() {
   );
 }
 
-export default CodeButtonContainer;
+export default ExplainButtonContainer;

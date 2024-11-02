@@ -5,8 +5,7 @@ import { send } from "ionicons/icons";
 import axios from "axios";
 import Answer from "./Answer";
 
-function InputTab() {
-  const [inputValue, setInputValue] = useState("");
+function InputTab({ inputValue, setInputValue, onSubmit }) {
   const [questions, setQuestions] = useState([]);
 
   // Função para lidar com o envio da pergunta
@@ -31,6 +30,7 @@ function InputTab() {
           ...prevQuestions,
           { text: answer, isUser: false },
         ]);
+        onSubmit();
       } catch (error) {
         console.error("Erro ao buscar resposta da API:", error);
       }

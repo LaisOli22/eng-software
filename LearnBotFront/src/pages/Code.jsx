@@ -10,7 +10,6 @@ function Code() {
         <div className="h-screen bg-green bg-cover bg-center">
         <Header/>
         <CodeInfo/>
-        <InputTab/>
         <CodeButtonContainer/>
       </div>
     </NextUIProvider>
