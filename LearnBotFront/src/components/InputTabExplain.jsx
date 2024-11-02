@@ -4,6 +4,7 @@ import { IonIcon } from "@ionic/react";
 import { send } from "ionicons/icons";
 import axios from "axios";
 import Answer from "./Answer";
+import ExplainInfo from "../components/ExplainInfo";
 
 function InputTab({ inputValue, setInputValue, onSubmit }) {
   const [questions, setQuestions] = useState([]);
@@ -38,28 +39,34 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
   };
 
   return (
-    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-screen flex justify-center mb-12">
-      <div className="w-screen flex flex-col items-center">
-        {/* Renderizar as perguntas acima do input */}
-        <div className="flex justify-center mb-5 w-screen h-[470px] overflow-y-auto bg-transparent rounded-lg">
-          <div className="flex flex-col w-1/2">
-            {questions.map((message, index) => (
-              <div
-                // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                key={index}
-                className={`my-2 max-w-full w-auto break-words ${
-                  message.isUser ? "self-end" : "self-start"
-                }`}
-              >
-                {message.isUser ? (
-                  <div className="p-3 self-end bg-purple-900 text-white rounded-3xl my-2">
-                    <p className="text-lg">{message.text}</p>
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-screen flex justify-center">
+      <div className="w-screen flex flex-col items-center h-full">
+        <div className="flex flex-col h-[600px] w-full overflow-y-auto overflow-x-hidden">
+          <ExplainInfo />
+
+          <div>
+            {/* Renderizar as perguntas acima do input */}
+            <div className="flex justify-center mb-5 w-full bg-transparent rounded-lg">
+              <div className="flex flex-col w-1/2">
+                {questions.map((message, index) => (
+                  <div
+                    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+                    key={index}
+                    className={`my-2 max-w-full w-auto break-words ${
+                      message.isUser ? "self-end" : "self-start"
+                    }`}
+                  >
+                    {message.isUser ? (
+                      <div className="p-3 self-end bg-purple-900 text-white rounded-3xl my-2">
+                        <p className="text-lg">{message.text}</p>
+                      </div>
+                    ) : (
+                      <Answer message={message.text} />
+                    )}
                   </div>
-                ) : (
-                  <Answer message={message.text} />
-                )}
+                ))}
               </div>
-            ))}
+            </div>
           </div>
         </div>
         {/* Campo de entrada */}
@@ -74,8 +81,7 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
             onClick={handleSend}
             className="bg-[#C9BCD6] rounded-full h-11 w-11 mr-3 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
           >
-            <IonIcon icon={send}
-            className="text-[#592899]" />
+            <IonIcon icon={send} className="text-[#592899]" />
           </Button>
         </div>
       </div>
