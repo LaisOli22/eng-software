@@ -39,14 +39,14 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
   };
 
   return (
-    <div className="absolute left-1/2 transform -translate-x-1/2 w-screen flex justify-center">
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-screen justify-center overflow-hidden">
       <div className="w-screen flex flex-col items-center h-full">
-        <div className="flex flex-col h-[600px] w-full overflow-y-auto overflow-x-hidden">
+        <div className="h-[#600px] overflow-y-auto mb-2">
           <ExplainInfo />
 
           <div>
             {/* Renderizar as perguntas acima do input */}
-            <div className="flex justify-center mb-5 w-full bg-transparent rounded-lg">
+            <div className="flex justify-center  w-screen h-[500px] bg-transparent rounded-lg">
               <div className="flex flex-col w-1/2">
                 {questions.map((message, index) => (
                   <div
@@ -70,7 +70,7 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
           </div>
         </div>
         {/* Campo de entrada */}
-        <div className="flex items-center gap-4 bg-[#E1DDE5] rounded-full h-14 w-1/2 shadow-md justify-between">
+        <div className="flex items-center m-1 bg-[#E1DDE5] rounded-full h-14 w-1/2 shadow-md justify-between">
           <input
             placeholder="Digite algo"
             value={inputValue}

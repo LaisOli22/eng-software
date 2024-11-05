@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import DebugButton from "./DebugButton";
 import MelhoriaButton from "./MelhoriaButton";
 import InputTab from "./InputTabCode";
 
 function CodeButtonContainer() {
-    const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const [inputValue, setInputValue] = useState(""); // Mova o estado para cá, se precisar controlar o valor do input
 
   const handleDebugClick = () => {
@@ -15,17 +15,26 @@ function CodeButtonContainer() {
   };
   const handleInputSubmit = () => {
     setIsVisible(false);
-};
+  };
 
   return (
     <>
-      {isVisible && (
-        <div className="fixed bottom-0 w-3/5 flex justify-center p-2 space-x-4 ml-8">
-          <MelhoriaButton onMelhoriaClick = {handleMelhoriaClick}/>
-          <DebugButton onDebugClick={handleDebugClick} />
-        </div>
-      )}
-      <InputTab inputValue={inputValue} setInputValue={setInputValue} onSubmit={handleInputSubmit}/>
+    <div className="w-full">
+      <div className="w-1/2">
+        {isVisible && (
+          <div className="fixed bottom-0 w-3/5 flex justify-center left-14 p-2 space-x-4 ">
+            <MelhoriaButton onMelhoriaClick={handleMelhoriaClick} />
+            <DebugButton onDebugClick={handleDebugClick} />
+          </div>
+        )}
+        <InputTab
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          onSubmit={handleInputSubmit}
+        />
+      </div>
+    </div>
+      
     </>
   );
 }
