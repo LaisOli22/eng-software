@@ -1,3 +1,4 @@
+import AnimatedImage from "../components/AnimatedImage";
 import WelcomeButton from "../components/WelcomeButton";
 
 function Home() {
@@ -22,8 +23,7 @@ function Home() {
               Estude quando quiser,<br/> a qualquer momento
             </h1>
             <p className="mb-10 text-2xl">
-              Desenvolvido para ajudar estudantes nas áreas de Inteligência
-              Artificial e Tecnologia a resolverem dúvidas, corrigirem erros de
+              Desenvolvido para ajudar estudantes iniciantes em programação à resolverem dúvidas, corrigirem erros de
               código e revisarem conteúdos complexos de forma interativa e
               acessível. O objetivo é oferecer um portal educacional onde os
               alunos possam interagir com um chatbot baseado na API da OpenAI,
@@ -34,11 +34,7 @@ function Home() {
             <WelcomeButton />
           </div>
         </div>
-        <img
-          src="./src/assets/IMG_5683.PNG"
-          alt="LearnBot"
-          className="w-32 md:w-48 lg:w-1/3 h-auto mr-6"
-        />
+        <AnimatedImage/>
       </div>
     </div>
   );
