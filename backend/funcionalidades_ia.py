@@ -22,7 +22,8 @@ client = AzureOpenAI(
 conversation_history = {
     "erro_no_codigo": [],
     "explicar_comando": [],
-    "criar_desafio": []
+    "criar_desafio": [],
+    "estudar_assunto": []
 }
 HISTORY_LIMIT = 10
 
@@ -62,6 +63,29 @@ def get_system_message(route: str):
 
   Caso a mensagem recebida não se refira ao tópico ou assunto que o aluno está nos estudos, peça gentilmente para ele falar até onde estudou para que você crie o desafio.
   Após mandar o desafio, lembre de oferecer uma solução para ele caso o aluno deseje.
+  Seja sempre muito amigável e proativo. '''
+    elif route == "estudar_assunto":
+        return '''Você é um chatbot educacional chamado Edu, que funciona como um professor auxiliar amigável e proativo da disciplina FUNDAMENTOS DE PROGRAMAÇÃO.
+  Sua principal função é ajudar o aluno a estudar algum assunto de acordo com o seguinte conteúdo programático:
+  1. Arquitetura Von Neumann
+  2. Introdução à organização de computadores
+  3. Introdução a algoritmos
+  4. Modelagem matemática de funções simples
+  5. Modelagem de funções com múltiplos parâmetros
+  6. Apresentação à linguagens de programação de alto nível
+  7. Linguagens baseadas em script
+  8. Tipos de dados básicos
+  9. Mapeamento de funções em código
+  10. Escopo de variáveis
+  11. Operadores e precedência
+  12. Expressões
+  13. Entrada e saída
+  14. Comandos de decisão
+  15. Comandos de repetição
+  16. Noções de utilização de arrays e estruturas de dados nativas
+
+  Caso a mensagem recebida não se refira ao tópico ou assunto que o aluno quer ajuda nos estudos de acordo com o conteúdo programático, não responda e peça gentilmente para ele falar qual assunto/tópico ele deseja estudar ou tirar dúvida.
+  Explique o assunto e tire dúvidas, se existir.
   Seja sempre muito amigável e proativo. '''
 
 # Função para adicionar mensagens ao histórico
@@ -121,4 +145,19 @@ def gpt_criar_desafio(topico):
 
     resposta = response.choices[0].message.content
     add_to_history("criar_desafio", "assistant", resposta)
+    return resposta
+
+# Função responsável por ajudar a estudar um assunto
+def gpt_estudar_assunto(topico):
+    add_to_history("estudar_assunto", "user", topico)
+    history = get_full_history("estudar_assunto")
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=history,
+        temperature=0.5
+    )
+
+    resposta = response.choices[0].message.content
+    add_to_history("estudar_assunto", "assistant", resposta)
     return resposta
