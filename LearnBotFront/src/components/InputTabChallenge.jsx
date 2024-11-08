@@ -41,7 +41,7 @@ function InputTab() {
   return (
     <div className="absolute left-1/2 transform -translate-x-1/2 w-screen flex justify-center overflow-hidden">
       <div className="w-screen flex flex-col items-center h-full">
-        <div className="flex flex-col h-[600px] w-full overflow-y-auto overflow-x-hidden">
+        <div className="flex flex-col h-[400px] w-full overflow-y-auto overflow-x-hidden">
           <ChallengeInfo />
 
           <div>
@@ -57,8 +57,8 @@ function InputTab() {
                     }`}
                   >
                     {message.isUser ? (
-                      <div className="p-3 self-end bg-purple-900 text-white rounded-3xl my-2">
-                        <p className="text-lg">{message.text}</p>
+                      <div className="p-2 self-end bg-purple-900 text-white rounded-3xl my-2">
+                        <p className="text-xs">{message.text}</p>
                       </div>
                     ) : (
                       <Answer message={message.text} />
@@ -71,18 +71,18 @@ function InputTab() {
         </div>
         {/* Campo de entrada */}
 
-        <div className="flex items-center gap-4 bg-[#E1DDE5] rounded-full h-14 w-1/2 shadow-md justify-between">
+        <div className="flex items-center mt-5 gap-4 bg-[#E1DDE5] rounded-full h-9 w-1/2 shadow-md justify-between bottom-4">
           <input
             placeholder="Digite algo"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            className="bg-transparent flex-1 pl-8 size-14 border-transparent focus:ring-0 focus:outline-none focus:border-transparent"
+            className="bg-transparent flex-1 pl-8 text-xs border-transparent focus:ring-0 focus:outline-none focus:border-transparent"
           />
           <Button
             onClick={handleSend}
-            className="bg-[#C9BCD6] rounded-full h-10 w-10 mr-3 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
+            className="bg-[#C9BCD6] rounded-full h-7 p-2 mr-2 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
           >
-            <IonIcon icon={send} className="size-6 text-[#592899]" />
+            <IonIcon icon={send} className="size-4 text-[#592899]" />
           </Button>
         </div>
       </div>

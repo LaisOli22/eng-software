@@ -2,7 +2,7 @@
 function Answer({ message }) {
   return (
     <div className="flex self-start align-top">
-      <div className="bg-[#383638] w-11 h-11 rounded-full mr-6">
+      <div className="bg-[#383638] w-8 h-8 rounded-full mr-6">
         <img
           src="./src/assets/IMG_5669.PNG"
           alt="Edu"
@@ -10,7 +10,7 @@ function Answer({ message }) {
         />
       </div>
       <div className=" bg-[#E1DDE5] text-black p-3 rounded-3xl max-w-[60%]">
-        <p className="text-lg text-justify">{message}</p>
+        <p className="text-xs text-justify">{message}</p>
       </div>
     </div>
   );

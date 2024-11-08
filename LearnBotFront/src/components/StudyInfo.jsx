@@ -1,7 +1,7 @@
 function StudyInfo() {
   return (
     <div className="justify-center flex align-top">
-      <div className="bg-[#383638] w-11 h-11 rounded-full mr-6">
+      <div className="bg-[#383638] w-8 h-8 rounded-full mr-6">
         <img
           src="./src/assets/IMG_5669.PNG"
           alt="Edu"
@@ -9,7 +9,7 @@ function StudyInfo() {
         />
       </div>
 
-      <p className="text-justify w-1/2 text-lg  bg-[#E1DDE5] rounded-3xl p-3">
+      <p className="text-justify w-1/2 text-xs bg-[#E1DDE5] rounded-3xl p-3">
         Vamos estudar juntos!🤓 Mas antes, selecione o módulo que quer
         estudar: <br /> Módulo 1 - Arquitetura Von Neumann <br /> Módulo 2 - Introdução
           à organização de computadores <br /> Módulo 3 - Introdução a

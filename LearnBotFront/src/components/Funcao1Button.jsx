@@ -5,14 +5,14 @@ import { codeOutline } from "ionicons/icons";
 function Funcao1Button({ onFuncao1Click }) {
     return (
         <span
-            onClick={onFuncao1Click} // Adiciona o onClick aqui
-            className="flex items-center justify-center gap-2 w-36 h-12 rounded-[30px] border-gray-400 border-2 hover:cursor-pointer shadow-lg active:shadow-none hover:bg-[#fdf5ff] opacity-80"
+            onClick={onFuncao1Click} 
+            className="flex items-center justify-center gap-2 w-24 h-8 rounded-[30px] border-gray-400 border-2 hover:cursor-pointer shadow-lg active:shadow-none hover:bg-[#fdf5ff] opacity-80"
             style={{ backgroundColor: "rgb(225, 221, 229)" }}
         >
-            <div className="flex items-center justify-center h-9 w-9 text-purple-600">
-                <IonIcon icon={codeOutline} className="text-3xl" />
+            <div className="flex items-center justify-center h-5 w-5 text-purple-600">
+                <IonIcon icon={codeOutline} className="text-xl" />
             </div>
-            <div className="text-center font-normal">
+            <div className="text-center text-xs">
                 <p>println()</p>
             </div>  
         </span>

@@ -22,7 +22,7 @@ function CodeButtonContainer() {
     <div className="w-full">
       <div className="w-1/2">
         {isVisible && (
-          <div className="fixed bottom-0 w-3/5 flex justify-center left-14 p-2 space-x-4 ">
+          <div className="fixed bottom-0 w-3/5 flex justify-center left-9 p-2 space-x-2 ">
             <MelhoriaButton onMelhoriaClick={handleMelhoriaClick} />
             <DebugButton onDebugClick={handleDebugClick} />
           </div>

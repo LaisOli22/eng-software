@@ -9,7 +9,7 @@ const AnimatedImage = () => {
     const height = mountRef.current.clientHeight;
 
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(35, width / height, 1, 1000);
+    const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     camera.position.z = 5;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -53,7 +53,7 @@ const AnimatedImage = () => {
       };
     }, []);
 
-  return <div ref={mountRef} style={{ width: '800px', height: '700px' }} />;
+  return <div ref={mountRef} style={{ width: '550px', height: '550px' }} />;
 };
 
 export default AnimatedImage;
