@@ -18,51 +18,31 @@ client = AzureOpenAI(
     azure_endpoint=azure_endpoint
 )
 
-# Função responsável por retornar resposta do GPT em relação a funcionalidade Erro no código
-def gpt_erro_no_codigo(question):
-    system_message = '''Você é um chatbot educacional chamado Edu, que funciona como um professor auxiliar amigável e proativo. 
+# Inicializar o histórico em memória e o limite de mensagens
+conversation_history = {
+    "erro_no_codigo": [],
+    "explicar_comando": [],
+    "criar_desafio": []
+}
+HISTORY_LIMIT = 10
+
+# Função para retornar o system prompt baseado na rota
+def get_system_message(route: str):
+    if route == "erro_no_codigo":
+        return '''Você é um chatbot educacional chamado Edu, que funciona como um professor auxiliar amigável e proativo. 
     Sua principal função é ajudar alunos que estão enfrentando problemas ou erros em seus códigos. 
     Quando o aluno enviar um código com erro, analise o problema e ofereça uma solução de forma amigável e clara.  
-    Caso a mensagem não esteja relacionada a erros em código, NÃO RESPONDA, explique que sua função é ajudar a solucionar problemas no código e peça gentilmente para o aluno enviar o erro para que você possa ajudar.  
+    Caso a mensagem não esteja relacionada a erros em código, explique que sua função é ajudar a solucionar problemas no código e peça gentilmente para o aluno enviar o erro para que você possa ajudar.  
     Mantenha sempre um tom amigável, como um professor simpático e animado.'''
-    user_message = question
-
-    # Chamada da API
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": system_message},
-            {"role": "user", "content": user_message}
-        ],
-        temperature=0.5
-    )
-
-    return response.choices[0].message.content
-
-
-# Função responsável por retornar resposta do GPT em relação a funcionalidade Explicar um Comando ou função
-def gpt_explicar_comando(question):
-  system_message = '''Você é um chatbot educacional chamado Edu, que funciona como um professor auxiliar amigável e proativo.
+    elif route == "explicar_comando":
+        return '''Você é um chatbot educacional chamado Edu, que funciona como um professor auxiliar amigável e proativo.
   Sua principal função é ajudar alunos a entender comandos ou funções em tecnologia. 
   Sempre que o aluno pedir uma explicação sobre um comando ou função, responda de forma amigável, informativa e focada.  
-  Caso a mensagem não esteja relacionada a comandos ou funções, NÃO RESPONDA, explique qual a sua função e peça gentilmente para o aluno especificar qual comando ou função deseja entender.
+  Caso a mensagem não esteja relacionada a comandos ou funções, não responda e explique qual a sua função e peça gentilmente para o aluno especificar qual comando ou função deseja entender.
   Lembre de ser sempre muito amigável e proativo. '''
-  user_message = question
-  # Chamada da api
-  response = client.chat.completions.create(
-      model="gpt-4o-mini",
-      messages=[
-          {"role": "system", "content": system_message},
-          {"role": "user", "content": user_message}
-      ]
-  )
-
-  return response.choices[0].message.content
-
-# Função responsável por retornar o desafio criado pelo GPT em relação a funcionalidade Criar um desafio
-def gpt_criar_desafio(topico):
-  system_message =  '''Você é um chatbot educacional chamado Edu, que funciona como um professor auxiliar amigável e proativo da disciplina FUNDAMENTOS DE PROGRAMAÇÃO.
-  Sua principal e única função é criar um desafio para o aluno praticar até o tópico que ele estudou de acordo com o seguinte conteúdo programático:
+    elif route == "criar_desafio":
+        return '''Você é um chatbot educacional chamado Edu, que funciona como um professor auxiliar amigável e proativo da disciplina FUNDAMENTOS DE PROGRAMAÇÃO.
+  Sua principal função é criar um desafio para o aluno praticar até o tópico que ele estudou de acordo com o seguinte conteúdo programático:
   1. Arquitetura Von Neumann
   2. Introdução à organização de computadores
   3. Introdução a algoritmos
@@ -81,18 +61,64 @@ def gpt_criar_desafio(topico):
   16. Noções de utilização de arrays e estruturas de dados nativas
 
   Caso a mensagem recebida não se refira ao tópico ou assunto que o aluno está nos estudos, peça gentilmente para ele falar até onde estudou para que você crie o desafio.
-  Após mandar o desafio, a ideia é que fique disponível um botão  ‘RESPOSTA’ para o usuário selecionar e receber a solução do desafio. Lembre de informar isso ao final da mensagem.
+  Após mandar o desafio, lembre de oferecer uma solução para ele caso o aluno deseje.
   Seja sempre muito amigável e proativo. '''
-  user_message = f'Crie um desafio visando os assuntos estudados até o assunto mencionado na seguinte mensagem do aluno: {topico}'
-  # Chamada da api
-  response = client.chat.completions.create(
-      model="gpt-4o-mini",
-      messages=[
-          {"role": "system", "content": system_message},
-          {"role": "user", "content": user_message}
-      ],
-      temperature = 0.5
-      )
 
-  return response.choices[0].message.content
+# Função para adicionar mensagens ao histórico
+def add_to_history(route: str, role: str, content: str):
+    if route in conversation_history:
+        conversation_history[route].append({"role": role, "content": content})
+        # Se o histórico exceder o limite, remover a mensagem mais antiga
+        if len(conversation_history[route]) > HISTORY_LIMIT:
+            conversation_history[route].pop(0)
 
+# Função para obter o histórico com o system prompt incluído
+def get_full_history(route: str):
+    system_message = get_system_message(route)
+    history = [{"role": "system", "content": system_message}] + conversation_history.get(route, [])
+    return history
+
+# Função para responder a erros no código
+def gpt_erro_no_codigo(question):
+    add_to_history("erro_no_codigo", "user", question)
+    history = get_full_history("erro_no_codigo")
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=history,
+        temperature=0.5
+    )
+
+    resposta = response.choices[0].message.content
+    add_to_history("erro_no_codigo", "assistant", resposta)
+    return resposta
+
+# Função para responder a explicação de comandos
+def gpt_explicar_comando(question):
+    add_to_history("explicar_comando", "user", question)
+    history = get_full_history("explicar_comando")
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=history,
+        temperature=0.5
+    )
+
+    resposta = response.choices[0].message.content
+    add_to_history("explicar_comando", "assistant", resposta)
+    return resposta
+
+# Função para criar desafios
+def gpt_criar_desafio(topico):
+    add_to_history("criar_desafio", "user", topico)
+    history = get_full_history("criar_desafio")
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=history,
+        temperature=0.5
+    )
+
+    resposta = response.choices[0].message.content
+    add_to_history("criar_desafio", "assistant", resposta)
+    return resposta
