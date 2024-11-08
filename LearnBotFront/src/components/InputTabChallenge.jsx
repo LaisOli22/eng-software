@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@nextui-org/react";
 import { IonIcon } from "@ionic/react";
 import { send } from "ionicons/icons";
-import AnswerButton from "./AnswerButton";
 import ChallengeInfo from "../components/ChallengeInfo";
 import axios from "axios";
 import Answer from "./Answer";
@@ -71,22 +70,20 @@ function InputTab() {
           </div>
         </div>
         {/* Campo de entrada */}
-        <div className="flex flex-row align-middle justify-center gap-5">
-          <div className="flex items-center gap-4 bg-[#E1DDE5] rounded-full h-14 w-[780px] shadow-md justify-between">
-            <input
-              placeholder="Digite algo"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-              className="bg-transparent flex-1 pl-8 size-14 border-transparent focus:ring-0 focus:outline-none focus:border-transparent"
-            />
-            <Button
-              onClick={handleSend}
-              className="bg-[#C9BCD6] rounded-full h-10 w-10 mr-3 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
-            >
-              <IonIcon icon={send} className="size-6 text-[#592899]" />
-            </Button>
-          </div>
-          <AnswerButton />
+
+        <div className="flex items-center gap-4 bg-[#E1DDE5] rounded-full h-14 w-1/2 shadow-md justify-between">
+          <input
+            placeholder="Digite algo"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            className="bg-transparent flex-1 pl-8 size-14 border-transparent focus:ring-0 focus:outline-none focus:border-transparent"
+          />
+          <Button
+            onClick={handleSend}
+            className="bg-[#C9BCD6] rounded-full h-10 w-10 mr-3 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
+          >
+            <IonIcon icon={send} className="size-6 text-[#592899]" />
+          </Button>
         </div>
       </div>
     </div>

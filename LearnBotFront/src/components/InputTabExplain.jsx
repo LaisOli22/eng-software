@@ -39,7 +39,7 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
   };
 
   return (
-    <div className="absolute left-1/2 transform -translate-x-1/2 w-screen justify-center overflow-hidden">
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-screen justify-center overflow-hidden ">
       <div className="w-screen flex flex-col items-center h-full">
         <div className="h-[#600px] overflow-y-auto mb-2">
           <ExplainInfo />
