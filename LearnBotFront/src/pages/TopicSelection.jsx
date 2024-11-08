@@ -16,12 +16,12 @@ function TopicSelection() {
           </div>
           <div>
             <div className='flex justify-center p-8 space-x-6'>
-                <ConceptExplainButton/>
-                <CodeCorrectionButton/>
+                <ButtonTemplate/>
+                <CreateActivityButton/>
             </div>
             <div className='flex justify-center space-x-6'>
-                <CreateActivityButton/>
-                <ButtonTemplate/>
+                <ConceptExplainButton/>
+                <CodeCorrectionButton/>
             </div>
           </div>
         </div>
