@@ -39,9 +39,9 @@ function InputTab() {
   };
 
   return (
-    <div className="absolute left-1/2 transform -translate-x-1/2 w-screen flex justify-center overflow-hidden">
-      <div className="w-screen flex flex-col items-center h-full">
-        <div className="flex flex-col h-[400px] w-full overflow-y-auto overflow-x-hidden">
+    <div className="flex items-center w-screen pt-20 h-screen justify-center overflow-hidden">
+      <div className="w-screen flex flex-col  items-center h-full">
+        <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden mb-16">
           <StudyInfo />
 
           <div>
@@ -50,7 +50,6 @@ function InputTab() {
               <div className="flex flex-col w-1/2">
                 {questions.map((message, index) => (
                   <div
-                    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                     key={index}
                     className={`my-2 max-w-full w-auto break-words ${
                       message.isUser ? "self-end" : "self-start"
@@ -70,12 +69,15 @@ function InputTab() {
           </div>
         </div>
         {/* Campo de entrada */}
-
-        <div className="flex mt-5 items-center gap-4 bg-[#E1DDE5] rounded-full h-9 w-1/2 shadow-md justify-between">
+        <div className="flex items-center bg-[#E1DDE5] rounded-full h-10 w-1/2 shadow-md justify-between fixed bottom-2 mb-4">
           <input
             placeholder="Digite algo"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if(e.key === 'Enter'){
+                handleSend();
+              }}}
             className="bg-transparent flex-1 pl-8 text-xs border-transparent focus:ring-0 focus:outline-none focus:border-transparent"
           />
           <Button

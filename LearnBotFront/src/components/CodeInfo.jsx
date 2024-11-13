@@ -6,11 +6,11 @@ function CodeInfo() {
           <img
             src="./src/assets/IMG_5669.PNG"
             alt="Edu"
-            className=" lg:w-11 h-auto"
+            className="size-8"
           />
         </div>
 
-        <p className="text-justify text-xs  bg-[#E1DDE5] rounded-3xl p-3 inline-box">
+        <p className="text-justify w-auto text-xs bg-[#eee9f0] rounded-3xl p-3 border-2 border-dotted border-[#c0e1c7] inline-box">
           Opa! Parece que o seu código deu erro, né? 😱 Não se preocupe! Estou
           aqui pra ajudar. Por favor, copie o código que está dando problema e
           cole aqui para que eu possa dar uma olhada e te ajudar a resolver o

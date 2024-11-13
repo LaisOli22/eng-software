@@ -12,13 +12,16 @@ const AnimatedImage = () => {
     const camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
     camera.position.z = 5;
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setPixelRatio(window.devicePixelRatio); 
     renderer.setSize(width, height);
     mountRef.current.appendChild(renderer.domElement);
 
 
     // Carregar a textura da imagem
     const texture = new THREE.TextureLoader().load('src/assets/IMG_5683.PNG');
+    texture.minFilter = THREE.LinearFilter;
+    texture.magFilter = THREE.LinearFilter; 
     const geometry = new THREE.PlaneGeometry(3, 3);
     const material = new THREE.MeshBasicMaterial({ map: texture, transparent: true,});
     const plane = new THREE.Mesh(geometry, material);

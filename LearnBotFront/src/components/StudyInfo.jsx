@@ -1,31 +1,29 @@
 function StudyInfo() {
   return (
     <div className="justify-center flex align-top">
-      <div className="bg-[#383638] w-8 h-8 rounded-full mr-6">
-        <img
-          src="./src/assets/IMG_5669.PNG"
-          alt="Edu"
-          className=" lg:w-11 h-auto"
-        />
-      </div>
+      <div className="w-1/2 flex">
+        <div className="bg-[#383638] w-9 h-8 rounded-full mr-6 flex items-center justify-center">
+          <img src="./src/assets/IMG_5669.PNG" alt="Edu" className="size-7" />
+        </div>
 
-      <p className="text-justify w-1/2 text-xs bg-[#E1DDE5] rounded-3xl p-3">
-        Vamos estudar juntos!🤓 Mas antes, selecione o módulo que quer
-        estudar: <br /> Módulo 1 - Arquitetura Von Neumann <br /> Módulo 2 - Introdução
-          à organização de computadores <br /> Módulo 3 - Introdução a
+        <p className="text-justify text-xs w-full bg-[#eee9f0] rounded-3xl p-3 border-2 border-dotted border-[#ebcce5]">
+          Vamos estudar juntos!🤓 Mas antes, selecione o módulo que quer
+          estudar:<br /> <strong> Módulo 1 - </strong> Arquitetura Von Neumann <br /> <strong> Módulo 2 - </strong> Introdução
+          à organização de computadores <br /> <strong> Módulo 3 - </strong> Introdução a
           algoritmos
-          <br /> Módulo 4 - Modelagem matemática de funções simples
-          <br /> Módulo 5 - Modelagem de funções com múltiplos parâmetros <br />
-          Módulo 6 - Apresentação à linguagens de programação de alto nível{" "}
+          <br /> <strong> Módulo 4 - </strong> Modelagem matemática de funções simples
+          <br /> <strong> Módulo 5 - </strong> Modelagem de funções com múltiplos parâmetros <br />
+          <strong> Módulo 6 - </strong> Apresentação à linguagens de programação de alto nível{" "}
           <br />
-          Módulo 7 - Linguagens baseadas em script <br /> Módulo 8 - Tipos de
-          dados básicos <br /> Módulo 9 - Mapeamento de funções em código <br />
-          Módulo 10 - Escopo de variáveis <br /> Módulo 11 - Operadores e
-          precedência <br /> Módulo 12 - Expressões <br /> Módulo 13 - Entrada e
-          saída <br /> Módulo 14 - Comandos de decisão <br /> Módulo 15 -
-          Comandos de repetição <br /> Módulo 16 - Noções de utilização de
+          <strong> Módulo 7 - </strong> Linguagens baseadas em script <br /> <strong> Módulo 8 - </strong> Tipos de
+          dados básicos <br /> <strong> Módulo 9 - </strong> Mapeamento de funções em código <br />
+          <strong> Módulo 10 - </strong> Escopo de variáveis <br /> <strong> Módulo 11 - </strong> Operadores e
+          precedência <br /> <strong> Módulo 12 - </strong> Expressões <br /> <strong> Módulo 13 - </strong> Entrada e
+          saída <br /> <strong> Módulo 14 - </strong> Comandos de decisão <br /> <strong> Módulo 15 - </strong>
+          Comandos de repetição <br /> <strong> Módulo 16 - </strong> Noções de utilização de
           arrays e estruturas de dados nativas
-      </p>
+        </p>
+      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@ import CodeInfo from "../components/CodeInfo";
 
 function InputTab({ inputValue, setInputValue, onSubmit }) {
   const [questions, setQuestions] = useState([]);
-
+  
   // Função para lidar com o envio da pergunta
   const handleSend = async () => {
     if (inputValue.trim()) {
@@ -39,17 +39,17 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
   };
 
   return (
-    <div className="absolute left-1/2 transform -translate-x-1/2 w-screen justify-center overflow-hidden">
+    <div className="flex items-center w-screen pt-20 h-screen justify-center overflow-hidden">
       <div className="w-screen flex flex-col items-center h-full">
-        <div className="h-[#400px] overflow-y-auto mb-2">
-          <CodeInfo/>
+        <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden mb-16">
+          <CodeInfo />
+
           <div>
             {/* Renderizar as perguntas acima do input */}
-            <div className="flex justify-center w-screen h-[312px] bg-transparent rounded-lg">
+            <div className="flex justify-center mb-3 w-full bg-transparent rounded-lg ">
               <div className="flex flex-col w-1/2">
                 {questions.map((message, index) => (
                   <div
-                    // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
                     key={index}
                     className={`my-2 max-w-full w-auto break-words ${
                       message.isUser ? "self-end" : "self-start"
@@ -69,18 +69,22 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
           </div>
         </div>
         {/* Campo de entrada */}
-        <div className="flex items-center m-1 bg-[#E1DDE5] rounded-full h-9 w-1/2 shadow-md justify-between">
+        <div className="flex items-center bg-[#E1DDE5] rounded-full h-10 w-1/2 shadow-md justify-between fixed bottom-2 mb-4">
           <input
             placeholder="Digite algo"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if(e.key === 'Enter'){
+                handleSend();
+              }}}
             className="bg-transparent flex-1 pl-8 text-xs border-transparent focus:ring-0 focus:outline-none focus:border-transparent"
           />
           <Button
             onClick={handleSend}
             className="bg-[#C9BCD6] rounded-full h-7 p-2 mr-2 flex items-center justify-center hover:bg-[#baaec5] focus-outline-none"
           >
-            <IonIcon icon={send} className="text-[#592899] size-4" />
+            <IonIcon icon={send} className="size-4 text-[#592899]" />
           </Button>
         </div>
       </div>
