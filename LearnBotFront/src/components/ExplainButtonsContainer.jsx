@@ -27,7 +27,7 @@ function ExplainButtonContainer() {
             onSubmit={handleInputSubmit}
           />
           {isVisible && (
-            <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <div className="fixed bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-2 mb-1">
               <Funcao1Button onFuncao1Click={handleFuncao1Click} />
               <Funcao2Button onFuncao2Click={handleFuncao2Click} />
             </div>
