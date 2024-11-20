@@ -1,12 +1,26 @@
 function ChallengeInfo() {
   return (
-    <div className="justify-center w-screen flex align-top">
+    <div className="justify-center flex align-top">
       <div className="w-1/2 flex ">
-        <div className="bg-[#383638] w-9 h-8 rounded-full mr-6 flex items-center justify-center">
+         {/* Contêiner da imagem */}
+         <div
+          className="bg-[#383638] flex items-center justify-center"
+          style={{
+            width: "36px",  // Largura fixa
+            height: "36px", // Altura fixa
+            borderRadius: "50%", // Tornando a imagem circular
+            flexShrink: 0, // Evitar redimensionamento
+          }}
+        >
           <img
             src="./src/assets/IMG_5669.PNG"
             alt="Edu"
-            className="size-7"
+            style={{
+              width: "100%",   // Preencher 100% do contêiner
+              height: "100%",  // Preencher 100% do contêiner
+              objectFit: "cover", // Preserva as proporções da imagem
+              borderRadius: "50%", // Torna a imagem circular
+            }}
           />
         </div>
 
