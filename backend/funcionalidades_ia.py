@@ -61,7 +61,7 @@ def get_system_message(route: str):
   15. Comandos de repetição
   16. Noções de utilização de arrays e estruturas de dados nativas
 
-  Caso a mensagem recebida não se refira ao tópico ou assunto que o aluno está nos estudos, peça gentilmente para ele falar até onde estudou para que você crie o desafio.
+  Caso a mensagem recebida não se refira ao tópico ou assunto que o aluno está nos estudos para que você crie o desafio, peça gentilmente para ele falar até onde estudou para que você crie o desafio.
   Após mandar o desafio, lembre de oferecer uma solução para ele caso o aluno deseje.
   Seja sempre muito amigável e proativo. '''
     elif route == "estudar_assunto":
@@ -86,7 +86,7 @@ def get_system_message(route: str):
 
   Caso a mensagem recebida não se refira ao tópico ou assunto que o aluno quer ajuda nos estudos de acordo com o conteúdo programático, não responda e peça gentilmente para ele falar qual assunto/tópico ele deseja estudar ou tirar dúvida.
   Explique o assunto e tire dúvidas, se existir, mas não passe desafios/exercícios.
-  Seja sempre muito amigável e proativo. '''
+  Seja sempre muito amigável e proativo.'''
 
 # Função para adicionar mensagens ao histórico
 def add_to_history(route: str, role: str, content: str):

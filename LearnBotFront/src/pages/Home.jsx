@@ -16,9 +16,9 @@ function Home() {
         />
       </div>
 
-      <div className="flex justify-center items-center w-full h-full">
-        <div className="flex-col items-center ml-72 ">
-          <div className="text-[#FFFFFF] text-justify mb-14">
+      <div className="flex justify-evenly items-center w-full  gap-0 h-full">
+        <div className="flex-col items-center w-1/3 ml-36 mb-14">
+          <div className="text-[#FFFFFF] text-justify items-center">
             <h1 className="text-[35px] font-bold leading-tight mb-4">
               Estude quando quiser,
               <br /> a qualquer momento
@@ -36,7 +36,8 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-end w-full h-full pr-10">
+
+        <div className="flex items-center h-full w-1/3 mb-14 ">
           <AnimatedImage />
         </div>
       </div>
