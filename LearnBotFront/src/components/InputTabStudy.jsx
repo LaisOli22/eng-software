@@ -17,6 +17,11 @@ function InputTab() {
       setQuestions([...questions, { text: questionText, isUser: true }]);
       setInputValue("");
 
+      setQuestions((prevQuestions) => [
+        ...prevQuestions,
+        { text: "*Um momento ...*", isUser: false},
+      ]);
+
       try {
         // Requisição para o backend
         const response = await axios.post(
@@ -28,12 +33,22 @@ function InputTab() {
 
         // Obter resposta da API e adicionar ao estado
         const answer = response.data.resposta;
-        setQuestions((prevQuestions) => [
-          ...prevQuestions,
-          { text: answer, isUser: false },
-        ]);
+        setQuestions((prevQuestions) =>
+        prevQuestions.map((msg, index) =>
+          index === prevQuestions.length - 1
+            ? { text: answer, isUser: false}
+            : msg
+        )
+      );
       } catch (error) {
         console.error("Erro ao buscar resposta da API:", error);
+        setQuestions((prevQuestions) =>
+          prevQuestions.map((msg, index) =>
+            index === prevQuestions.length - 1
+              ? { text: "Erro ao obter resposta.", isUser: false}
+              : msg
+          )
+        );
       }
     }
   };
