@@ -1,7 +1,7 @@
 function ExplainInfo() {
   return (
     <div className="justify-center flex align-top">
-      <div className="w-1/2 flex">
+      <div className="w-1/2 flex gap-2">
         {/* Contêiner da imagem */}
         <div
           className="bg-[#383638] flex items-center justify-center"

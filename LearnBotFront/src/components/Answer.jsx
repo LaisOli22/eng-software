@@ -5,7 +5,7 @@ function Answer({ message }) {
   const messages = converter.makeHtml(message);
 
   return (
-    <div className="flex self-start align-top">
+    <div className="flex self-start align-top gap-2">
       {/* Contêiner da imagem */}
       <div
         className="bg-[#383638] flex items-center justify-center"
@@ -30,7 +30,7 @@ function Answer({ message }) {
 
       {/* Contêiner da mensagem */}
       <div className="bg-[#eee9f0] text-black p-3 rounded-3xl w-full">
-        <p className="text-xs text-justify inline-box" dangerouslySetInnerHTML={{ __html: messages }} />
+        <p className="text-xs text-justify inline-box " dangerouslySetInnerHTML={{ __html: messages }} />
       </div>
     </div>
   );
