@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@nextui-org/react";
 import { IonIcon } from "@ionic/react";
 import { send } from "ionicons/icons";
@@ -8,6 +8,16 @@ import ExplainInfo from "../components/ExplainInfo";
 
 function InputTab({ inputValue, setInputValue, onSubmit }) {
   const [questions, setQuestions] = useState([]);
+  const scrollRef = useRef(null);
+
+  //Descer a barra de rolagem a cada atualização
+  const scrollToBottom = ()=>{
+    setTimeout(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, 100);
+  }
 
   // Função para lidar com o envio da pergunta
   const handleSend = async () => {
@@ -18,8 +28,10 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
 
       setQuestions((prevQuestions) => [
         ...prevQuestions,
-        { text: "*Um momento...*", isUser: false},
+        { text: "*Processando...*", isUser: false},
       ]);
+
+      scrollToBottom();
 
       try {
         // Requisição para o backend
@@ -40,6 +52,8 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
           )
         );
         onSubmit();
+        scrollToBottom();
+        
       } catch (error) {
         console.error("Erro ao buscar resposta da API:", error);
         setQuestions((prevQuestions) =>
@@ -56,7 +70,7 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
   return (
     <div className="flex items-center w-screen pt-20 h-screen justify-center overflow-hidden">
       <div className="w-screen flex flex-col items-center h-full">
-        <div className="flex flex-col w-full overflow-y-auto overflow-x-hidden mb-16">
+        <div className="flex flex-col w-full overflow-y-auto h-full mb-16">
           <ExplainInfo />
 
           <div>
@@ -79,6 +93,7 @@ function InputTab({ inputValue, setInputValue, onSubmit }) {
                     )}
                   </div>
                 ))}
+                <div ref={scrollRef}/>
               </div>
             </div>
           </div>

@@ -9,11 +9,13 @@ function Home() {
           <h1 className="text-white font-bold">Learn</h1>
           <h1 className="text-[#D3F936] font-500">Bot</h1>
         </div>
-        <img
-          src="./src/assets/Objetivo_Desenvolvimento_Sustentável_4_PT_01.webp.png"
-          alt="LearnBot"
-          className="absolute top-0 right-20 w-20 h-auto mr-6 mt-0"
-        />
+        <a href="https://brasil.un.org/pt-br/sdgs/4">
+          <img
+            src="./src/assets/Objetivo_Desenvolvimento_Sustentável_4_PT_01.webp.png"
+            alt="LearnBot"
+            className="absolute top-0 right-20 w-20 h-auto mr-6 mt-0"
+          />
+        </a>
       </div>
 
       <div className="flex justify-evenly items-center w-full  gap-0 h-full">
