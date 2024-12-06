@@ -173,7 +173,7 @@ Abaixo estão alguns exemplos de logs gerados durante a execução do projeto:
 Se você tiver dúvidas, sugestões ou quiser contribuir com o projeto, entre em contato com os desenvolvedores:
 
 - **Lais Oliveira**  
-  📧 [lais.oli22@gmail.com](mailto:lais.oli22@gmail.com)  
+  📧 [lso@poli.br](mailto:lso@poli.br)  
   GitHub: [@LaisOli22](https://github.com/LaisOli22)
 
 - **Giulia Buonafina**  
