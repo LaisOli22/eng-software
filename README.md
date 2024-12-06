@@ -111,7 +111,7 @@ Clone o repositório:
 ### **Frontend**  
 1. Entre no diretório do frontend:
    ```bash
-   cd frontend
+   cd LearnBotFront
    ```
 
 2. Instale as dependências do projeto:
@@ -183,6 +183,10 @@ Se você tiver dúvidas, sugestões ou quiser contribuir com o projeto, entre em
 - **Bernardo Braga**  
 📧 [bernardo.braga@upe.br](mailto:bernardo.braga@upe.br)  
 GitHub: [@BernardoMFBraga](https://github.com/BernardoMFBraga)
+
+- **Peri Macedo**  
+📧 [plm@poli.br](mailto:plm@poli.br)  
+GitHub: [@perishow](https://github.com/perishow)
 
 ---
 
