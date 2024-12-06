@@ -61,7 +61,7 @@ Antes de começar, você precisa garantir que possui as seguintes ferramentas in
 
 Clone o repositório:
    ```bash
-   git clone https://github.com/LaisOli22/eng-software
+   git clone https://github.com/LaisOli22/eng-software.git
    ```
 ---
 
