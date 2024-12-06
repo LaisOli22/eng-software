@@ -1,19 +1,28 @@
-# **Chatbot Educacional**
+# **Chatbot Educacional 🤖🎓**
 
-## **Descrição do Projeto**  
+## **Descrição do Projeto 🌱**  
 O **Chatbot Educacional** é um projeto desenvolvido para ajudar estudantes iniciantes em programação a:  
-- Resolver dúvidas.  
-- Corrigir erros de código.  
-- Praticar e revisar conteúdos complexos de forma interativa e acessível.  
+- Resolver dúvidas 💡
+- Corrigir erros de código 🐞  
+- Praticar e revisar conteúdos complexos de forma interativa e acessível ✨ 
 
 O objetivo principal é oferecer um portal educacional onde os alunos possam interagir com um chatbot baseado na API da OpenAI, promovendo uma experiência de aprendizado contínua e assistida.  
 
 Além disso, buscamos contribuir para o **ODS 4** (*Educação de Qualidade*), desenvolvendo uma aplicação que facilite o acesso a ferramentas educacionais de alta qualidade.
 
+
+
+## **Apresentação da Ferramenta 🎥**
+
+Assista à apresentação do **Chatbot Educacional** no YouTube para ver como a ferramenta funciona:
+
+[Assista ao vídeo aqui](EM_PRODUÇÃO)
+
 ---
 
 ## **Funcionalidades Principais**  
-O chatbot possui quatro funcionalidades principais:  
+O chatbot possui quatro funcionalidades principais: 
+
 1. **Correção de Código**  
    - O aluno pode enviar códigos com erros para o chatbot, que auxilia na correção e explica o que está errado.  
 
@@ -156,6 +165,24 @@ Abaixo estão alguns exemplos de logs gerados durante a execução do projeto:
 
 ### **Frontend Log**  
 ![Exemplo de log do frontend](frontend_logs.png)
+
+---
+
+## **Contato 📬**
+
+Se você tiver dúvidas, sugestões ou quiser contribuir com o projeto, entre em contato com os desenvolvedores:
+
+- **Lais Oliveira**  
+  📧 [lais.oli22@gmail.com](mailto:lais.oli22@gmail.com)  
+  GitHub: [@LaisOli22](https://github.com/LaisOli22)
+
+- **Giulia Buonafina**  
+  📧 [gbsc@poli.br](mailto:gbsc@poli.br)  
+  GitHub: [@GiuBuonafina](https://github.com/GiuBuonafina)
+
+- **Bernardo Braga**  
+📧 [bernardo.braga@upe.br](mailto:bernardo.braga@upe.br)  
+GitHub: [@BernardoMFBraga](https://github.com/BernardoMFBraga)
 
 ---
 
