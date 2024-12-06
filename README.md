@@ -152,10 +152,10 @@ Clone o repositório:
 Abaixo estão alguns exemplos de logs gerados durante a execução do projeto:
 
 ### **Backend Log**  
-![Exemplo de log do backend](path/to/backend-log-image.png)
+![Exemplo de log do backend](backend_logs.png)
 
 ### **Frontend Log**  
-![Exemplo de log do frontend](path/to/frontend-log-image.png)
+![Exemplo de log do frontend](frontend_logs.png)
 
 ---
 
