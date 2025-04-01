@@ -16,7 +16,7 @@ Além disso, buscamos contribuir para o **ODS 4** (*Educação de Qualidade*), d
 
 Assista à apresentação do **Chatbot Educacional** no YouTube para ver como a ferramenta funciona:
 
-[Assista ao vídeo aqui](EM_PRODUÇÃO)
+[Assista ao vídeo aqui](https://www.youtube.com/watch?v=MxHkD-5XW3E&t=2s)
 
 ---
 
